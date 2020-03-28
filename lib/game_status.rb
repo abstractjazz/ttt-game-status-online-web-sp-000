@@ -49,17 +49,8 @@ def over?(board)
   won?(board) || draw?(board)
 end
 
-def winner (board)
-  def winner (board)
-    index = []
-    index = won?(board)
-    if index == false
-      return nil
-    else
-      if board[index[0]] == "X"
-        return "X"
-      else
-        return "O"
-      end
-    end
+def winner(board)
+  if winning_combo = won?(board)
+    board[winning_combo.first]
   end
+end
